@@ -5,7 +5,7 @@ V-Xtractor: An open-source, high-throughput software tool to identify and extrac
 
 V-Xtractor is a Perl-based, high-throughput software tool that locates, verifies, and extracts defined segments of sequence information from sequence datasets. Hidden Markov Models are used to detect the conserved boundaries of the target region and to extract the interjacent sequence information (that is for example the hyper-variable regions of the rRNA gene or the internal transcribed spacer regions of the rRNA operon). This tool extracts phylogenetically comparable regions without prior multiple sequence alignments and improves reliability of the data by confirming basic authenticity of the sequence.
 
-Source code available at:
+Source code also available at:
 http://www.microbiome.ch/software
 
 Version		2.1
@@ -16,10 +16,8 @@ Affiliation	Swiss Federal Institute of Technology, Zurich
 Programmer	Charles Howes (vxtractor(at)ch.pkts.ca)
 
 The full installation instructions can be found in the Users Guide.
-Quick installation instructions can be found below.
 
-
-Dependencies
+Install dependencies prior to usage
 Perl is available at http://www.perl.org/
 HMMER is available at http://hmmer.janelia.org/
 
