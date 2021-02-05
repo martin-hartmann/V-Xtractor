@@ -19,35 +19,46 @@ The full installation instructions can be found in the Users Guide.
 Quick installation instructions can be found below.
 
 
-1) Perl and HMMER
-
+Dependencies
 Perl is available at http://www.perl.org/
-
-Installing HMMER version 3
-note: V-Xtractor 2.1 requires HMMER version 3. An older version of V-Xtractor running on HMMER version 2 can be provided on request.
-
- - download			http://hmmer.janelia.org/#download  
- - uncompress/unpack		tar zxf hmmer-3.0.tar.gz
- - move to new directory	cd hmmer-3.0
- - configure			./configure
- - build			make
- - automated tests		make check
- - automated install		make install
+HMMER is available at http://hmmer.janelia.org/
 
 Precompiled binaries are available for some operating systems. They can be found in the "binaries/" directory after the unpacking the tarball.
 Installing the package takes nothing more than moving these binaries wherever you want them (e.g. /usr/local/bin).
 
+Runnin V-Xtractor
+Unzip the HMMs.zip archive. Move with command line terminal into this V-Xtractor directory and execute according to the example below.
 
-2) V-Xtractor
-
- - download	at http://www.microbiome.ch/software
- - unpack	"unzip vxtractor.pl"
-
-
-3) Input file and running V-Xtractor
-
-Use sequences in FASTA formatted input file. Copy FASTA file to directory containing vxtractor.pl. Move into this directory with "cd path/". Typing "perl vxtractor.pl" lists all options of the program.
-
-Example:
 perl vxtractor.pl -a -r .V1-V3. -h HMMs/SSU/bacteria/ -o out.fasta  in.fasta
 -- this will extract V1 through V3, from bacterial small subunit rRNA gene sequences found in the file in.fasta and save the results to out.fasta, checking the correct order of V1, V2, and V3.
+
+
+
+General usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r region] [-i (long|short)]
+   [-h hmmdirectory] [-c csvoutput] [-o outputfile] inputfile [inputfiles...]
+
+  This program will analyze each sequence in each input file, looking
+  for the HMMs in the hmm directory.
+
+  Options:
+    -o outputfile: Write the HMM region information to a FASTA file
+    -c csvoutput: Write the HMM region information to a CSV file
+
+    -h hmmdirectory: The directory containing HMM files named
+       V[1-x]leftlong.HMM   V[1-x]leftshort.HMM
+       V[1-x]rightlong.HMM  V[1-x]rightshort.HMM
+
+    -r region: The regions to extract, in the following format:
+      -r V1       -- the V1 region only
+      -r .V1-V2.  -- the region from the left of V1 to the right of V2
+      -r V1.-.V2  -- the region from the right of V1 to the left of V2
+      -r .V3-.V7  -- the region from the left of V3 to the left of V7
+
+    -i (long|short): Include HMM regions in the fasta output (default: exclude)
+      The long or short HMM region will be chosen where applicable.
+
+    -b: Use bitscore instead of evalue threshold (only use one or the other)
+    -e evalue: Set the global evalue threshold (default: 0.01)
+    -s score: Set the global score threshold (default: 0)
+
+    -a: Check that HMMs occur in alphabetical order in each sequence
