@@ -23,24 +23,16 @@ Dependencies
 Perl is available at http://www.perl.org/
 HMMER is available at http://hmmer.janelia.org/
 
-Precompiled binaries are available for some operating systems. They can be found in the "binaries/" directory after the unpacking the tarball.
-Installing the package takes nothing more than moving these binaries wherever you want them (e.g. /usr/local/bin).
 
-Runnin V-Xtractor
-Unzip the HMMs.zip archive. Move with command line terminal into this V-Xtractor directory and execute according to the example below.
+V-Xtractor v. 2.1. Copyright (c) Hartmann et al. 2010.
 
-perl vxtractor.pl -a -r .V1-V3. -h HMMs/SSU/bacteria/ -o out.fasta  in.fasta
--- this will extract V1 through V3, from bacterial small subunit rRNA gene sequences found in the file in.fasta and save the results to out.fasta, checking the correct order of V1, V2, and V3.
-
-
-
-General usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r region] [-i (long|short)]
-   [-h hmmdirectory] [-c csvoutput] [-o outputfile] inputfile [inputfiles...]
+Usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r region] [-i (long|short)] [-h hmmdirectory] [-c csvoutput] [-o outputfile] inputfiles
 
   This program will analyze each sequence in each input file, looking
   for the HMMs in the hmm directory.
 
   Options:
+    
     -o outputfile: Write the HMM region information to a FASTA file
     -c csvoutput: Write the HMM region information to a CSV file
 
@@ -62,3 +54,8 @@ General usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score]
     -s score: Set the global score threshold (default: 0)
 
     -a: Check that HMMs occur in alphabetical order in each sequence
+
+    Example:
+    /usr/local/bin/vxtractor.pl -a -r .V1-V3. -h HMMs/SSU/bacteria/ -o out.fasta  in.fasta
+    --this will extract V1 through V3, for SSU bacteria, from the file in.fasta
+    and save the results to out.fasta, checking correct order of V1, V2, and V3.
