@@ -23,7 +23,7 @@ Dependencies
 Perl is available at http://www.perl.org/
 HMMER is available at http://hmmer.janelia.org/
 
-
+```
 V-Xtractor v. 2.1. Copyright (c) Hartmann et al. 2010.
 
 Usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r region] [-i (long|short)] [-h hmmdirectory] [-c csvoutput] [-o outputfile] inputfiles
@@ -31,8 +31,7 @@ Usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r reg
   This program will analyze each sequence in each input file, looking
   for the HMMs in the hmm directory.
 
-  Options:
-    
+  Options:    
     -o outputfile: Write the HMM region information to a FASTA file
     -c csvoutput: Write the HMM region information to a CSV file
 
@@ -59,3 +58,4 @@ Usage: /usr/local/bin/vxtractor.pl [-a] [-b] [-d] [-e evalue] [-s score] [-r reg
     /usr/local/bin/vxtractor.pl -a -r .V1-V3. -h HMMs/SSU/bacteria/ -o out.fasta  in.fasta
     --this will extract V1 through V3, for SSU bacteria, from the file in.fasta
     and save the results to out.fasta, checking correct order of V1, V2, and V3.
+```
