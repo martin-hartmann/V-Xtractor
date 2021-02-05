@@ -40,7 +40,7 @@ Installing the package takes nothing more than moving these binaries wherever yo
 
 2) V-Xtractor
 
- - download	at http://www.microbiome.ch/web/Tools.html
+ - download	at http://www.microbiome.ch/software
  - unpack	"unzip vxtractor.pl"
 
 
